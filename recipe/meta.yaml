@@ -1,6 +1,6 @@
 {% set name = "pyearth" %}
-{% set git_rev = "master" %}
-{% set version = "0.1.26" %}
+{% set version = "0.1.27" %}
+{% set git_rev = "v" + version %}
 
 package:
   name: {{ name|lower }}
@@ -22,7 +22,7 @@ requirements:
   run:
     - python >=3.8
     - numpy
-    - gdal    
+    - gdal
     - matplotlib-base
     - cartopy
 
