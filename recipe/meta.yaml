@@ -23,7 +23,7 @@ requirements:
     - cython >=0.29.0
     - numpy
   run:
-    - python >={{ python_min }}
+    - python
     - {{ pin_compatible('numpy') }}
     - gdal
     - matplotlib-base
