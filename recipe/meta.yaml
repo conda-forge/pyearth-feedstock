@@ -21,6 +21,8 @@ requirements:
     - pip
     - python {{ python_min }}
     - setuptools
+    - cython >=0.29.0
+    - numpy
   run:
     - python >={{ python_min }}
     - numpy
