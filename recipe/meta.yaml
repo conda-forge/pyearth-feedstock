@@ -12,20 +12,19 @@ source:
   git_url: https://github.com/changliao1025/pyearth
 
 build:
-  noarch: python
   script: {{ PYTHON }} -m pip install . -vv
   number: 0
 
 requirements:
   host:
     - pip
-    - python {{ python_min }}
+    - python >={{ python_min }}
     - setuptools
     - cython >=0.29.0
     - numpy
   run:
     - python >={{ python_min }}
-    - numpy
+    - {{ pin_compatible('numpy') }}
     - gdal
     - matplotlib-base
     - cartopy
