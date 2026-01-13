@@ -18,7 +18,7 @@ build:
 requirements:
   host:
     - pip
-    - python >={{ python_min }}
+    - python
     - setuptools
     - cython >=0.29.0
     - numpy
@@ -36,7 +36,6 @@ test:
     - pip check
   requires:
     - pip
-    - python {{ python_min }}
 
 about:
   home: https://github.com/changliao1025/pyearth
