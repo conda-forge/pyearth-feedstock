@@ -22,12 +22,14 @@ requirements:
     - setuptools
     - cython >=0.29.0
     - numpy
+    - geographiclib
   run:
     - python
     - {{ pin_compatible('numpy') }}
     - gdal
     - matplotlib-base
     - cartopy
+    - geographiclib
 
 test:
   imports:
