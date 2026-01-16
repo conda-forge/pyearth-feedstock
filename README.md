@@ -13,6 +13,15 @@ Package license: BSD-3-Clause
 
 Summary: Python for Earth Science.
 
+About pyearth
+-------------
+
+Home: https://github.com/changliao1025/pyearth
+
+Package license: BSD-3-Clause
+
+Summary: Python for Earth Science with Cython extensions.
+
 About pyearth-all
 -----------------
 
@@ -21,15 +30,6 @@ Home: https://github.com/changliao1025/pyearth
 Package license: BSD-3-Clause
 
 Summary: Python for Earth Science with all optional dependencies.
-
-About pyearth-cython
---------------------
-
-Home: https://github.com/changliao1025/pyearth
-
-Package license: BSD-3-Clause
-
-Summary: Python for Earth Science with Cython extensions.
 
 About pyearth-geodesic
 ----------------------
@@ -120,7 +120,6 @@ Current release info
 | --- | --- | --- | --- |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-pyearth-green.svg)](https://anaconda.org/conda-forge/pyearth) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/pyearth.svg)](https://anaconda.org/conda-forge/pyearth) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/pyearth.svg)](https://anaconda.org/conda-forge/pyearth) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/pyearth.svg)](https://anaconda.org/conda-forge/pyearth) |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-pyearth--all-green.svg)](https://anaconda.org/conda-forge/pyearth-all) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/pyearth-all.svg)](https://anaconda.org/conda-forge/pyearth-all) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/pyearth-all.svg)](https://anaconda.org/conda-forge/pyearth-all) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/pyearth-all.svg)](https://anaconda.org/conda-forge/pyearth-all) |
-| [![Conda Recipe](https://img.shields.io/badge/recipe-pyearth--cython-green.svg)](https://anaconda.org/conda-forge/pyearth-cython) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/pyearth-cython.svg)](https://anaconda.org/conda-forge/pyearth-cython) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/pyearth-cython.svg)](https://anaconda.org/conda-forge/pyearth-cython) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/pyearth-cython.svg)](https://anaconda.org/conda-forge/pyearth-cython) |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-pyearth--geodesic-green.svg)](https://anaconda.org/conda-forge/pyearth-geodesic) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/pyearth-geodesic.svg)](https://anaconda.org/conda-forge/pyearth-geodesic) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/pyearth-geodesic.svg)](https://anaconda.org/conda-forge/pyearth-geodesic) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/pyearth-geodesic.svg)](https://anaconda.org/conda-forge/pyearth-geodesic) |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-pyearth--geovista-green.svg)](https://anaconda.org/conda-forge/pyearth-geovista) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/pyearth-geovista.svg)](https://anaconda.org/conda-forge/pyearth-geovista) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/pyearth-geovista.svg)](https://anaconda.org/conda-forge/pyearth-geovista) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/pyearth-geovista.svg)](https://anaconda.org/conda-forge/pyearth-geovista) |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-pyearth--spatial-green.svg)](https://anaconda.org/conda-forge/pyearth-spatial) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/pyearth-spatial.svg)](https://anaconda.org/conda-forge/pyearth-spatial) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/pyearth-spatial.svg)](https://anaconda.org/conda-forge/pyearth-spatial) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/pyearth-spatial.svg)](https://anaconda.org/conda-forge/pyearth-spatial) |
@@ -136,16 +135,16 @@ conda config --add channels conda-forge
 conda config --set channel_priority strict
 ```
 
-Once the `conda-forge` channel has been enabled, `pyearth, pyearth-all, pyearth-cython, pyearth-geodesic, pyearth-geovista, pyearth-spatial, pyearth-statistics` can be installed with `conda`:
+Once the `conda-forge` channel has been enabled, `pyearth, pyearth-all, pyearth-geodesic, pyearth-geovista, pyearth-spatial, pyearth-statistics` can be installed with `conda`:
 
 ```
-conda install pyearth pyearth-all pyearth-cython pyearth-geodesic pyearth-geovista pyearth-spatial pyearth-statistics
+conda install pyearth pyearth-all pyearth-geodesic pyearth-geovista pyearth-spatial pyearth-statistics
 ```
 
 or with `mamba`:
 
 ```
-mamba install pyearth pyearth-all pyearth-cython pyearth-geodesic pyearth-geovista pyearth-spatial pyearth-statistics
+mamba install pyearth pyearth-all pyearth-geodesic pyearth-geovista pyearth-spatial pyearth-statistics
 ```
 
 It is possible to list all of the versions of `pyearth` available on your platform with `conda`:
