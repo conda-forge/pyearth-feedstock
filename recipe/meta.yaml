@@ -51,6 +51,8 @@ outputs:
 
   # Optional: Statistics functionality
   - name: {{ name|lower }}-statistics
+    build:
+      noarch: python
     requirements:
       run:
         - {{ pin_subpackage(name, exact=True) }}
@@ -70,6 +72,8 @@ outputs:
 
   # Optional: Spatial functionality
   - name: {{ name|lower }}-spatial
+    build:
+      noarch: python
     requirements:
       run:
         - {{ pin_subpackage(name, exact=True) }}
@@ -85,6 +89,8 @@ outputs:
 
   # Optional: GeoVista visualization
   - name: {{ name|lower }}-geovista
+    build:
+      noarch: python
     requirements:
       run:
         - {{ pin_subpackage(name, exact=True) }}
@@ -101,6 +107,8 @@ outputs:
 
   # Optional: Geodesic calculations
   - name: {{ name|lower }}-geodesic
+    build:
+      noarch: python
     requirements:
       run:
         - {{ pin_subpackage(name, exact=True) }}
@@ -116,6 +124,8 @@ outputs:
 
   # Meta-package: All optional dependencies
   - name: {{ name|lower }}-all
+    build:
+      noarch: python
     requirements:
       run:
         - {{ pin_subpackage(name, exact=True) }}
