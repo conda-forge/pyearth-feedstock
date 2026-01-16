@@ -50,7 +50,6 @@ outputs:
       script: python -m pip install .[cython] -vv
     requirements:
       build:
-        - {{ stdlib("c") }}
         - {{ compiler('c') }}
       host:
         - pip
