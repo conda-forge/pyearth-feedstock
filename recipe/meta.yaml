@@ -15,37 +15,8 @@ build:
   number: 0
 
 outputs:
-  # Base package with core dependencies only
+  # Base package - always includes Cython extensions
   - name: {{ name|lower }}
-    build:
-      script: python -m pip install . -vv
-    requirements:
-      host:
-        - pip
-        - python
-        - setuptools
-        - numpy
-      run:
-        - python
-        - {{ pin_compatible('numpy') }}
-        - gdal
-        - matplotlib-base
-        - cartopy
-    test:
-      imports:
-        - pyearth
-      commands:
-        - pip check
-      requires:
-        - pip
-    about:
-      home: https://github.com/changliao1025/pyearth
-      summary: Python for Earth Science.
-      license: BSD-3-Clause
-      license_file: LICENSE.md
-
-  # Optional: Cython-accelerated extensions
-  - name: {{ name|lower }}-cython
     build:
       script: python -m pip install .[cython] -vv
     requirements:
@@ -59,13 +30,20 @@ outputs:
         - numpy
         - cython >=0.29.0
       run:
-        - {{ pin_subpackage(name, exact=True) }}
+        - python
         - {{ pin_compatible('numpy') }}
+        - gdal
+        - matplotlib-base
+        - cartopy
     test:
       imports:
         - pyearth
         - pyearth.gis.geometry.kernel
         - pyearth.gis.location.kernel
+      commands:
+        - pip check
+      requires:
+        - pip
     about:
       home: https://github.com/changliao1025/pyearth
       summary: Python for Earth Science with Cython extensions.
@@ -142,7 +120,6 @@ outputs:
     requirements:
       run:
         - {{ pin_subpackage(name, exact=True) }}
-        - {{ pin_subpackage(name ~ '-cython', exact=True) }}
         - {{ pin_subpackage(name ~ '-statistics', exact=True) }}
         - {{ pin_subpackage(name ~ '-spatial', exact=True) }}
         - {{ pin_subpackage(name ~ '-geovista', exact=True) }}
