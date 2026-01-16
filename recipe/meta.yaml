@@ -4,7 +4,7 @@
 {% set python_min = "3.8" %}
 
 package:
-  name: {{ name|lower }}
+  name: {{ name|lower }}-split
   version: {{ version }}
 
 source:
@@ -12,33 +12,148 @@ source:
   git_url: https://github.com/changliao1025/pyearth
 
 build:
-  script: {{ PYTHON }} -m pip install . -vv
-  number: 2
+  number: 3
 
-requirements:
-  host:
-    - pip
-    - python
-    - setuptools
-    - cython >=0.29.0
-    - numpy
-    - geographiclib
-  run:
-    - python
-    - {{ pin_compatible('numpy') }}
-    - gdal
-    - matplotlib-base
-    - cartopy
-    - geovista
-    - geographiclib
+outputs:
+  # Base package with core dependencies only
+  - name: {{ name|lower }}
+    build:
+      script: {{ PYTHON }} -m pip install . -vv
+    requirements:
+      host:
+        - pip
+        - python
+        - setuptools
+        - numpy
+      run:
+        - python
+        - {{ pin_compatible('numpy') }}
+        - gdal
+        - matplotlib-base
+        - cartopy
+    test:
+      imports:
+        - pyearth
+      commands:
+        - pip check
+      requires:
+        - pip
+    about:
+      home: https://github.com/changliao1025/pyearth
+      summary: Python for Earth Science.
+      license: BSD-3-Clause
+      license_file: LICENSE.md
 
-test:
-  imports:
-    - pyearth
-  commands:
-    - pip check
-  requires:
-    - pip
+  # Optional: Cython-accelerated extensions
+  - name: {{ name|lower }}-cython
+    build:
+      script: {{ PYTHON }} -m pip install .[cython] -vv
+    requirements:
+      build:
+        - {{ compiler('c') }}
+      host:
+        - pip
+        - python
+        - setuptools
+        - numpy
+        - cython >=0.29.0
+      run:
+        - {{ pin_subpackage(name, exact=True) }}
+        - {{ pin_compatible('numpy') }}
+    test:
+      imports:
+        - pyearth
+        - pyearth.gis.geometry.kernel
+        - pyearth.gis.location.kernel
+    about:
+      home: https://github.com/changliao1025/pyearth
+      summary: Python for Earth Science with Cython extensions.
+      license: BSD-3-Clause
+      license_file: LICENSE.md
+
+  # Optional: Statistics functionality
+  - name: {{ name|lower }}-statistics
+    requirements:
+      run:
+        - {{ pin_subpackage(name, exact=True) }}
+        - requests
+        - netcdf4
+        - pandas
+        - scipy
+        - statsmodels
+    test:
+      imports:
+        - pyearth
+    about:
+      home: https://github.com/changliao1025/pyearth
+      summary: Python for Earth Science with statistics support.
+      license: BSD-3-Clause
+      license_file: LICENSE.md
+
+  # Optional: Spatial functionality
+  - name: {{ name|lower }}-spatial
+    requirements:
+      run:
+        - {{ pin_subpackage(name, exact=True) }}
+        - rtree
+    test:
+      imports:
+        - pyearth
+    about:
+      home: https://github.com/changliao1025/pyearth
+      summary: Python for Earth Science with spatial support.
+      license: BSD-3-Clause
+      license_file: LICENSE.md
+
+  # Optional: GeoVista visualization
+  - name: {{ name|lower }}-geovista
+    requirements:
+      run:
+        - {{ pin_subpackage(name, exact=True) }}
+        - geovista
+        - pyvista
+    test:
+      imports:
+        - pyearth
+    about:
+      home: https://github.com/changliao1025/pyearth
+      summary: Python for Earth Science with GeoVista visualization.
+      license: BSD-3-Clause
+      license_file: LICENSE.md
+
+  # Optional: Geodesic calculations
+  - name: {{ name|lower }}-geodesic
+    requirements:
+      run:
+        - {{ pin_subpackage(name, exact=True) }}
+        - geographiclib
+    test:
+      imports:
+        - pyearth
+    about:
+      home: https://github.com/changliao1025/pyearth
+      summary: Python for Earth Science with geodesic support.
+      license: BSD-3-Clause
+      license_file: LICENSE.md
+
+  # Meta-package: All optional dependencies
+  - name: {{ name|lower }}-all
+    requirements:
+      run:
+        - {{ pin_subpackage(name, exact=True) }}
+        - {{ pin_subpackage(name ~ '-cython', exact=True) }}
+        - {{ pin_subpackage(name ~ '-statistics', exact=True) }}
+        - {{ pin_subpackage(name ~ '-spatial', exact=True) }}
+        - {{ pin_subpackage(name ~ '-geovista', exact=True) }}
+        - {{ pin_subpackage(name ~ '-geodesic', exact=True) }}
+    test:
+      imports:
+        - pyearth
+    about:
+      home: https://github.com/changliao1025/pyearth
+      summary: Python for Earth Science with all optional dependencies.
+      license: BSD-3-Clause
+      license_file: LICENSE.md
 
 about:
   home: https://github.com/changliao1025/pyearth
@@ -49,3 +164,4 @@ about:
 extra:
   recipe-maintainers:
     - changliao1025
+  feedstock-name: {{ name|lower }}
