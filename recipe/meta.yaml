@@ -29,6 +29,7 @@ requirements:
     - gdal
     - matplotlib-base
     - cartopy
+    - geovista
     - geographiclib
 
 test:
