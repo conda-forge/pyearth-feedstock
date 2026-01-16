@@ -18,7 +18,7 @@ outputs:
   # Base package with core dependencies only
   - name: {{ name|lower }}
     build:
-      script: {{ PYTHON }} -m pip install . -vv
+      script: python -m pip install . -vv
     requirements:
       host:
         - pip
@@ -47,7 +47,7 @@ outputs:
   # Optional: Cython-accelerated extensions
   - name: {{ name|lower }}-cython
     build:
-      script: {{ PYTHON }} -m pip install .[cython] -vv
+      script: python -m pip install .[cython] -vv
     requirements:
       build:
         - {{ stdlib("c") }}
