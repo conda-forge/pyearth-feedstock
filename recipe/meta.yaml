@@ -12,7 +12,7 @@ source:
   git_url: https://github.com/changliao1025/pyearth
 
 build:
-  number: 3
+  number: 0
 
 outputs:
   # Base package with core dependencies only
