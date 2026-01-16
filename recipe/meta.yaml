@@ -20,8 +20,6 @@ outputs:
     build:
       script: python setup.py build_ext --inplace && python -m pip install . -vv
     requirements:
-      build:
-        - {{ compiler('c') }}
       host:
         - pip
         - python
