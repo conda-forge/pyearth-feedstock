@@ -51,6 +51,7 @@ outputs:
     requirements:
       build:
         - {{ compiler('c') }}
+        - {{ stdlib("c") }}
       host:
         - pip
         - python
