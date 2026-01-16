@@ -23,6 +23,12 @@ jobs:
       win_64_numpy1.26python3.12.____cpython:
         CONFIG: win_64_numpy1.26python3.12.____cpython
         UPLOAD_PACKAGES: 'True'
+      win_64_numpy2.0python3.13.____cpython:
+        CONFIG: win_64_numpy2.0python3.13.____cpython
+        UPLOAD_PACKAGES: 'True'
+      win_64_numpy2.1python3.14.____cpython:
+        CONFIG: win_64_numpy2.1python3.14.____cpython
+        UPLOAD_PACKAGES: 'True'
   timeoutInMinutes: 360
   variables:
     CONDA_BLD_PATH: D:\\bld\\
