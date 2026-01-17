@@ -19,7 +19,10 @@ outputs:
   - name: {{ name|lower }}
     build:
       script: python -m pip install . -vv --no-build-isolation
+      skip: true  # [win and vc<14]
     requirements:
+      build:
+        - {{ compiler('c') }}
       host:
         - pip
         - python
