@@ -18,7 +18,7 @@ outputs:
   # Base package - always includes Cython extensions
   - name: {{ name|lower }}
     build:
-      script: python setup.py build_ext --inplace && python -m pip install . -vv
+      script: python -m pip install . -vv --no-build-isolation
     requirements:
       host:
         - pip
