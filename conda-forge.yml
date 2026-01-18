@@ -1,4 +1,12 @@
 conda_forge_output_validation: true
+outputs:
+  pyearth:
+    - pyearth
+    - pyearth-statistics
+    - pyearth-spatial
+    - pyearth-geovista
+    - pyearth-geodesic
+    - pyearth-all
 github:
   branch_name: main
   tooling_branch_name: main
