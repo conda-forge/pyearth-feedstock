@@ -34,7 +34,7 @@ outputs:
         - python >={{ python_min }}
         - {{ pin_compatible('numpy') }}
         - gdal
-        - matplotlib-base
+        - matplotlib
         - cartopy
     test:
       imports:
