@@ -4,7 +4,7 @@
 {% set python_min = "3.9" %}
 
 package:
-  name: {{ name|lower }}-split
+  name: {{ name|lower }}
   version: {{ version }}
 
 source:
@@ -13,162 +13,45 @@ source:
 
 build:
   number: 0
+  script: python -m pip install . -vv --no-build-isolation
+  skip: true  # [win and vc<14]
 
-outputs:
-  # Base package - always includes Cython extensions
-  - name: {{ name|lower }}
-    build:
-      script: python -m pip install . -vv --no-build-isolation
-      skip: true  # [win and vc<14]
-    requirements:
-      build:
-        - {{ stdlib("c") }}
-        - {{ compiler('c') }}
-      host:
-        - pip
-        - python {{ python_min }}
-        - setuptools
-        - numpy
-        - cython >=0.29.0
-      run:
-        - python >={{ python_min }}
-        - {{ pin_compatible('numpy') }}
-        - gdal
-        - matplotlib
-        - cartopy
-    test:
-      imports:
-        - pyearth
-        - pyearth.gis.geometry.kernel
-        - pyearth.gis.location.kernel
-      commands:
-        - pip check
-      requires:
-        - pip
-        - python {{ python_min }}
-    about:
-      home: https://github.com/changliao1025/pyearth
-      summary: Python for Earth Science with Cython extensions.
-      license: BSD-3-Clause
-      license_file: LICENSE.md
+requirements:
+  build:
+    - {{ stdlib("c") }}
+    - {{ compiler('c') }}
+  host:
+    - pip
+    - python {{ python_min }}
+    - setuptools
+    - numpy
+    - cython >=0.29.0
+  run:
+    - python >={{ python_min }}
+    - {{ pin_compatible('numpy') }}
+    - gdal
+    - matplotlib
+    - cartopy
+    - requests
+    - netcdf4
+    - pandas
+    - scipy
+    - statsmodels
+    - rtree
+    - geovista
+    - pyvista
+    - geographiclib
 
-  # Optional: Statistics functionality
-  - name: {{ name|lower }}-statistics
-    build:
-      noarch: python
-    requirements:
-      host:
-        - python {{ python_min }}
-      run:
-        - python >={{ python_min }}
-        - {{ pin_subpackage(name, exact=True) }}
-        - requests
-        - netcdf4
-        - pandas
-        - scipy
-        - statsmodels
-    test:
-      imports:
-        - pyearth
-      requires:
-        - python {{ python_min }}
-    about:
-      home: https://github.com/changliao1025/pyearth
-      summary: Python for Earth Science with statistics support.
-      license: BSD-3-Clause
-      license_file: LICENSE.md
-
-  # Optional: Spatial functionality
-  - name: {{ name|lower }}-spatial
-    build:
-      noarch: python
-    requirements:
-      host:
-        - python {{ python_min }}
-      run:
-        - python >={{ python_min }}
-        - {{ pin_subpackage(name, exact=True) }}
-        - rtree
-    test:
-      imports:
-        - pyearth
-      requires:
-        - python {{ python_min }}
-    about:
-      home: https://github.com/changliao1025/pyearth
-      summary: Python for Earth Science with spatial support.
-      license: BSD-3-Clause
-      license_file: LICENSE.md
-
-  # Optional: GeoVista visualization
-  - name: {{ name|lower }}-geovista
-    build:
-      noarch: python
-    requirements:
-      host:
-        - python {{ python_min }}
-      run:
-        - python >={{ python_min }}
-        - {{ pin_subpackage(name, exact=True) }}
-        - geovista
-        - pyvista
-    test:
-      imports:
-        - pyearth
-      requires:
-        - python {{ python_min }}
-    about:
-      home: https://github.com/changliao1025/pyearth
-      summary: Python for Earth Science with GeoVista visualization.
-      license: BSD-3-Clause
-      license_file: LICENSE.md
-
-  # Optional: Geodesic calculations
-  - name: {{ name|lower }}-geodesic
-    build:
-      noarch: python
-    requirements:
-      host:
-        - python {{ python_min }}
-      run:
-        - python >={{ python_min }}
-        - {{ pin_subpackage(name, exact=True) }}
-        - geographiclib
-    test:
-      imports:
-        - pyearth
-      requires:
-        - python {{ python_min }}
-    about:
-      home: https://github.com/changliao1025/pyearth
-      summary: Python for Earth Science with geodesic support.
-      license: BSD-3-Clause
-      license_file: LICENSE.md
-
-  # Meta-package: All optional dependencies
-  - name: {{ name|lower }}-all
-    build:
-      noarch: python
-    requirements:
-      host:
-        - python {{ python_min }}
-      run:
-        - python >={{ python_min }}
-        - {{ pin_subpackage(name, exact=True) }}
-        - {{ pin_subpackage(name ~ '-statistics', exact=True) }}
-        - {{ pin_subpackage(name ~ '-spatial', exact=True) }}
-        - {{ pin_subpackage(name ~ '-geovista', exact=True) }}
-        - {{ pin_subpackage(name ~ '-geodesic', exact=True) }}
-    test:
-      imports:
-        - pyearth
-      requires:
-        - python {{ python_min }}
-    about:
-      home: https://github.com/changliao1025/pyearth
-      summary: Python for Earth Science with all optional dependencies.
-      license: BSD-3-Clause
-      license_file: LICENSE.md
+test:
+  imports:
+    - pyearth
+    - pyearth.gis.geometry.kernel
+    - pyearth.gis.location.kernel
+  commands:
+    - pip check
+  requires:
+    - pip
+    - python {{ python_min }}
 
 about:
   home: https://github.com/changliao1025/pyearth
