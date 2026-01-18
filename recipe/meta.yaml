@@ -22,7 +22,7 @@ requirements:
     - {{ compiler('c') }}
   host:
     - pip
-    - python {{ python_min }}
+    - python
     - setuptools
     - numpy
     - cython >=0.29.0
@@ -30,7 +30,7 @@ requirements:
     - python >={{ python_min }}
     - {{ pin_compatible('numpy') }}
     - gdal
-    - matplotlib
+    - matplotlib-base
     - cartopy
     - requests
     - netcdf4
@@ -51,7 +51,6 @@ test:
     - pip check
   requires:
     - pip
-    - python {{ python_min }}
 
 about:
   home: https://github.com/changliao1025/pyearth
