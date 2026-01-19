@@ -1,7 +1,7 @@
 {% set name = "pyearth" %}
-{% set version = "0.1.29" %}
-{% set git_rev = "v" + version %}
-{% set python_min = "3.8" %}
+{% set version = "0.2.0" %}
+{% set git_rev = "main" %}
+{% set python_min = "3.9" %}
 
 package:
   name: {{ name|lower }}
@@ -12,29 +12,41 @@ source:
   git_url: https://github.com/changliao1025/pyearth
 
 build:
-  script: {{ PYTHON }} -m pip install . -vv
-  number: 2
+  number: 0
+  script: python -m pip install . -vv --no-build-isolation
+  skip: true  # [win and vc<14]
 
 requirements:
+  build:
+    - {{ stdlib("c") }}
+    - {{ compiler('c') }}
   host:
     - pip
     - python
     - setuptools
-    - cython >=0.29.0
     - numpy
-    - geographiclib
+    - cython >=0.29.0
   run:
     - python
     - {{ pin_compatible('numpy') }}
     - gdal
     - matplotlib-base
     - cartopy
+    - requests
+    - netcdf4
+    - pandas
+    - scipy
+    - statsmodels
+    - rtree
     - geovista
+    - pyvista
     - geographiclib
 
 test:
   imports:
     - pyearth
+    - pyearth.gis.geometry.kernel
+    - pyearth.gis.location.kernel
   commands:
     - pip check
   requires:
@@ -49,3 +61,4 @@ about:
 extra:
   recipe-maintainers:
     - changliao1025
+  feedstock-name: {{ name|lower }}
