@@ -3,69 +3,11 @@ About pyearth-feedstock
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/pyearth-feedstock/blob/main/LICENSE.txt)
 
-
-About pyearth
--------------
-
 Home: https://github.com/changliao1025/pyearth
 
 Package license: BSD-3-Clause
 
 Summary: Python for Earth Science.
-
-About pyearth
--------------
-
-Home: https://github.com/changliao1025/pyearth
-
-Package license: BSD-3-Clause
-
-Summary: Python for Earth Science with Cython extensions.
-
-About pyearth-all
------------------
-
-Home: https://github.com/changliao1025/pyearth
-
-Package license: BSD-3-Clause
-
-Summary: Python for Earth Science with all optional dependencies.
-
-About pyearth-geodesic
-----------------------
-
-Home: https://github.com/changliao1025/pyearth
-
-Package license: BSD-3-Clause
-
-Summary: Python for Earth Science with geodesic support.
-
-About pyearth-geovista
-----------------------
-
-Home: https://github.com/changliao1025/pyearth
-
-Package license: BSD-3-Clause
-
-Summary: Python for Earth Science with GeoVista visualization.
-
-About pyearth-spatial
----------------------
-
-Home: https://github.com/changliao1025/pyearth
-
-Package license: BSD-3-Clause
-
-Summary: Python for Earth Science with spatial support.
-
-About pyearth-statistics
-------------------------
-
-Home: https://github.com/changliao1025/pyearth
-
-Package license: BSD-3-Clause
-
-Summary: Python for Earth Science with statistics support.
 
 Current build status
 ====================
@@ -85,24 +27,87 @@ Current build status
         <table>
           <thead><tr><th>Variant</th><th>Status</th></tr></thead>
           <tbody><tr>
-              <td>linux_64</td>
+              <td>linux_64_python3.10.____cpython</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=15559&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pyearth-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pyearth-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_python3.10.____cpython" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>osx_64</td>
+              <td>linux_64_python3.11.____cpython</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=15559&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pyearth-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pyearth-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_python3.11.____cpython" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>win_64</td>
+              <td>linux_64_python3.12.____cpython</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=15559&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pyearth-feedstock?branchName=main&jobName=win&configuration=win%20win_64_" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pyearth-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_python3.12.____cpython" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>linux_64_python3.9.____cpython</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=15559&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pyearth-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_python3.9.____cpython" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>osx_64_python3.10.____cpython</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=15559&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pyearth-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_python3.10.____cpython" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>osx_64_python3.11.____cpython</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=15559&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pyearth-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_python3.11.____cpython" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>osx_64_python3.12.____cpython</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=15559&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pyearth-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_python3.12.____cpython" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>osx_64_python3.9.____cpython</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=15559&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pyearth-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_python3.9.____cpython" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>win_64_python3.10.____cpython</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=15559&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pyearth-feedstock?branchName=main&jobName=win&configuration=win%20win_64_python3.10.____cpython" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>win_64_python3.11.____cpython</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=15559&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pyearth-feedstock?branchName=main&jobName=win&configuration=win%20win_64_python3.11.____cpython" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>win_64_python3.12.____cpython</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=15559&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pyearth-feedstock?branchName=main&jobName=win&configuration=win%20win_64_python3.12.____cpython" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>win_64_python3.9.____cpython</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=15559&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pyearth-feedstock?branchName=main&jobName=win&configuration=win%20win_64_python3.9.____cpython" alt="variant">
                 </a>
               </td>
             </tr>
@@ -119,11 +124,6 @@ Current release info
 | Name | Downloads | Version | Platforms |
 | --- | --- | --- | --- |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-pyearth-green.svg)](https://anaconda.org/conda-forge/pyearth) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/pyearth.svg)](https://anaconda.org/conda-forge/pyearth) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/pyearth.svg)](https://anaconda.org/conda-forge/pyearth) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/pyearth.svg)](https://anaconda.org/conda-forge/pyearth) |
-| [![Conda Recipe](https://img.shields.io/badge/recipe-pyearth--all-green.svg)](https://anaconda.org/conda-forge/pyearth-all) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/pyearth-all.svg)](https://anaconda.org/conda-forge/pyearth-all) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/pyearth-all.svg)](https://anaconda.org/conda-forge/pyearth-all) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/pyearth-all.svg)](https://anaconda.org/conda-forge/pyearth-all) |
-| [![Conda Recipe](https://img.shields.io/badge/recipe-pyearth--geodesic-green.svg)](https://anaconda.org/conda-forge/pyearth-geodesic) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/pyearth-geodesic.svg)](https://anaconda.org/conda-forge/pyearth-geodesic) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/pyearth-geodesic.svg)](https://anaconda.org/conda-forge/pyearth-geodesic) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/pyearth-geodesic.svg)](https://anaconda.org/conda-forge/pyearth-geodesic) |
-| [![Conda Recipe](https://img.shields.io/badge/recipe-pyearth--geovista-green.svg)](https://anaconda.org/conda-forge/pyearth-geovista) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/pyearth-geovista.svg)](https://anaconda.org/conda-forge/pyearth-geovista) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/pyearth-geovista.svg)](https://anaconda.org/conda-forge/pyearth-geovista) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/pyearth-geovista.svg)](https://anaconda.org/conda-forge/pyearth-geovista) |
-| [![Conda Recipe](https://img.shields.io/badge/recipe-pyearth--spatial-green.svg)](https://anaconda.org/conda-forge/pyearth-spatial) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/pyearth-spatial.svg)](https://anaconda.org/conda-forge/pyearth-spatial) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/pyearth-spatial.svg)](https://anaconda.org/conda-forge/pyearth-spatial) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/pyearth-spatial.svg)](https://anaconda.org/conda-forge/pyearth-spatial) |
-| [![Conda Recipe](https://img.shields.io/badge/recipe-pyearth--statistics-green.svg)](https://anaconda.org/conda-forge/pyearth-statistics) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/pyearth-statistics.svg)](https://anaconda.org/conda-forge/pyearth-statistics) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/pyearth-statistics.svg)](https://anaconda.org/conda-forge/pyearth-statistics) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/pyearth-statistics.svg)](https://anaconda.org/conda-forge/pyearth-statistics) |
 
 Installing pyearth
 ==================
@@ -135,16 +135,16 @@ conda config --add channels conda-forge
 conda config --set channel_priority strict
 ```
 
-Once the `conda-forge` channel has been enabled, `pyearth, pyearth-all, pyearth-geodesic, pyearth-geovista, pyearth-spatial, pyearth-statistics` can be installed with `conda`:
+Once the `conda-forge` channel has been enabled, `pyearth` can be installed with `conda`:
 
 ```
-conda install pyearth pyearth-all pyearth-geodesic pyearth-geovista pyearth-spatial pyearth-statistics
+conda install pyearth
 ```
 
 or with `mamba`:
 
 ```
-mamba install pyearth pyearth-all pyearth-geodesic pyearth-geovista pyearth-spatial pyearth-statistics
+mamba install pyearth
 ```
 
 It is possible to list all of the versions of `pyearth` available on your platform with `conda`:
