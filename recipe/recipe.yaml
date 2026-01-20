@@ -22,12 +22,12 @@ requirements:
     - ${{ compiler('c') }}
   host:
     - pip
-    - python >=3.9
+    - python
     - setuptools
     - numpy
     - cython >=0.29.0
   run:
-    - python >=3.9
+    - python
     - ${{ pin_compatible('numpy') }}
     - gdal
     - netcdf4
