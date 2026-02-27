@@ -11,7 +11,7 @@ source:
   rev: main
 
 build:
-  number: 0
+  number: 1
   script: python -m pip install . -vv --no-build-isolation
   skip:
     - win and vc<14
@@ -22,12 +22,12 @@ requirements:
     - ${{ compiler('c') }}
   host:
     - pip
-    - python
+    - python ${{ python_min }}.*
     - setuptools
     - numpy
     - cython >=0.29.0
   run:
-    - python
+    - python >=${{ python_min }}
     - ${{ pin_compatible('numpy') }}
     - gdal
     - netcdf4
