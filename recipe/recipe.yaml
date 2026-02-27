@@ -11,7 +11,7 @@ source:
   rev: main
 
 build:
-  number: 1
+  number: 2
   script: python -m pip install . -vv --no-build-isolation
   skip:
     - win and vc<14
@@ -29,7 +29,7 @@ requirements:
   run:
     - python >=${{ python_min }}
     - ${{ pin_compatible('numpy') }}
-    - gdal
+    - gdal >=3.0.0
     - netcdf4
     - pandas
     - scipy
