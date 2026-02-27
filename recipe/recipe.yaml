@@ -15,7 +15,6 @@ build:
   script: python -m pip install . -vv --no-build-isolation
   skip:
     - win and vc<14
-    - python <3.10
 
 requirements:
   build:
