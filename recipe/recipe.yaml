@@ -22,7 +22,7 @@ requirements:
     - ${{ compiler('c') }}
   host:
     - pip
-    - python ${{ python_min }}.*
+    - python 
     - setuptools
     - numpy
     - cython >=0.29.0
