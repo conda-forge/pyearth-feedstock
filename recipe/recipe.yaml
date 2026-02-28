@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://github.com/changliao1025/pyearth/archive/refs/tags/v${{ version }}.tar.gz
-  sha256: 4a21c13ed85223c95a836466a390150969b1c141abbba6262a115f09b40d0fb3
+  sha256: 383de0c7fa99a71545e704640774ce74f0b6c6eeee93e65b23a55337bd417b42
 
 build:
   number: 0
