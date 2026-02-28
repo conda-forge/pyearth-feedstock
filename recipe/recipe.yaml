@@ -1,20 +1,21 @@
 context:
   name: pyearth
-  version: 0.2.1
+  version: 0.2.2
 
 package:
   name: ${{ name|lower }}
   version: ${{ version }}
 
 source:
-  git: https://github.com/changliao1025/pyearth
-  rev: main
+  url: https://github.com/changliao1025/pyearth/archive/refs/tags/v${{ version }}.tar.gz
+  sha256: 4a21c13ed85223c95a836466a390150969b1c141abbba6262a115f09b40d0fb3
 
 build:
   number: 0
   script: python -m pip install . -vv --no-build-isolation
   skip:
     - win and vc<14
+    - python <3.10
 
 requirements:
   build:
@@ -35,6 +36,7 @@ requirements:
     - scipy
     - rtree
     - geographiclib
+    - statsmodels
 
 tests:
   - python:
