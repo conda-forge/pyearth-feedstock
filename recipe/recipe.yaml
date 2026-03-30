@@ -1,6 +1,6 @@
 context:
   name: pyearth
-  version: 0.2.2
+  version: 0.2.3
 
 package:
   name: ${{ name|lower }}
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://github.com/changliao1025/pyearth/archive/refs/tags/v${{ version }}.tar.gz
-  sha256: 383de0c7fa99a71545e704640774ce74f0b6c6eeee93e65b23a55337bd417b42
+  sha256: 4dc3b0fb11a0402de5fdccf41e762b28033abc663a5efc80652d38e6eff14f98
 
 build:
   number: 0
