@@ -11,7 +11,7 @@ source:
   sha256: 4dc3b0fb11a0402de5fdccf41e762b28033abc663a5efc80652d38e6eff14f98
 
 build:
-  number: 0
+  number: 1
   script: python -m pip install . -vv --no-build-isolation
   skip:
     - win and vc<14
