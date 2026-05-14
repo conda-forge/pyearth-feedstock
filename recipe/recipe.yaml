@@ -20,6 +20,12 @@ requirements:
   build:
     - ${{ stdlib("c") }}
     - ${{ compiler('c') }}
+    - python                              # Executes the build script on the Intel runner
+    - pip                                 # Tooling to run the install
+    - cython >=0.29.0                     # Compiles the .pyx files
+    - numpy                               # Provides headers for the build-machine
+    - cross-python_osx-arm64              # <--- THE MAGIC GLUE for osx-arm64
+    - cross-python_linux-aarch64          # <--- THE MAGIC GLUE for linux-arm64
   host:
     - pip
     - python
