@@ -5,17 +5,9 @@ github:
 conda_build:
   error_overlinking: true
 conda_forge_output_validation: true
-# ADD THIS SECTION:
-platforms:
-  - linux_64
-  - linux_aarch64
-  - osx_64
-  - osx_arm64
-  - win_64
-build_platform:
-  linux_aarch64: linux_64
-  osx_arm64: osx_64
 provider:
   linux: azure
+  linux_aarch64: default
   osx: azure
+  osx_arm64: default
   win: azure
