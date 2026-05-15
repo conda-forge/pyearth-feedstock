@@ -12,7 +12,7 @@ source:
 
 build:
   number: 1
-  script: ${{ PYTHON }} -m pip install . -vv --no-build-isolation
+  script: ${{ PYTHON }} -m pip install . -vv --no-deps --ignore-installed
   skip:
     - win and vc<14
 
