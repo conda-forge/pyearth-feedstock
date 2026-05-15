@@ -20,11 +20,11 @@ requirements:
   build:
     - ${{ stdlib("c") }}
     - ${{ compiler('c') }}
+    - cython >=0.29.0
     - if: build_platform != target_platform
       then:
         - python
         - cross-python_${{ target_platform }}
-        - cython >=0.29.0
         - numpy
   host:
     - pip
